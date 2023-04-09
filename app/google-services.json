@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "415028143738",
+    "project_id": "splitewiselite",
+    "storage_bucket": "splitewiselite.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:415028143738:android:05bbade8c60aab6cab3dc3",
+        "android_client_info": {
+          "package_name": "com.muazhassan.splitwise"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "415028143738-vimrcv93bps5miia77sn1vgkse6ucot2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBukmraNU5VC_EVu5jVY5VFGliO51VB7MM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "415028143738-vimrcv93bps5miia77sn1vgkse6ucot2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

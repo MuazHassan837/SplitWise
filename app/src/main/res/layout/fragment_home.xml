@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Core.Profile.ui.home.HomeFragment">
+
+
+
+    <TextView
+        android:id="@+id/totalBalanceLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="30sp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="5dp"
+        android:fontFamily="sans-serif"
+        android:text="Total Balance"
+        android:textStyle="bold"
+        android:textAlignment="textStart"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/youAreOwedLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif"
+        android:textSize="25sp"
+        android:text="You are owed $0"
+        app:layout_constraintStart_toStartOf="@id/totalBalanceLabel"
+        app:layout_constraintTop_toBottomOf="@id/totalBalanceLabel" />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="100dp"
+        android:layout_marginBottom="60dp"
+        app:layout_constraintBottom_toTopOf="parent"
+        android:orientation="vertical"
+        tools:listitem="@layout/list_item" />
+
+
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_marginEnd="@dimen/fab_margin"
+        android:layout_marginBottom="35dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/spl_add"
+        app:tint="@android:color/white" />
+
+    <TextView
+        android:id="@+id/group_textview"
+        android:layout_width="200dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="10dp"
+        android:text="Selected group: None"
+        android:textColor="@color/colorWhite"
+        android:textAppearance="@android:style/TextAppearance.Large.Inverse"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/change_group_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="25dp"
+        android:text="Change group"
+        app:layout_constraintStart_toEndOf="@+id/group_textview"
+        app:layout_constraintEnd_toStartOf="@+id/fab"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
