@@ -6,5 +6,9 @@ import com.muazhassan.splitwise.Core.Service.FirebaseManager
 
 class LoggedInViewModel(app: Application) : AndroidViewModel(app) {
 
+    var firebaseManager : FirebaseManager = FirebaseManager(app)
 
+    fun logOut() {
+        firebaseManager.logOut()
+    }
 }

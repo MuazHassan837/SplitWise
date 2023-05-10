@@ -34,6 +34,7 @@ open class CoreVC : AppCompatActivity() {
             }
         }
 
+        return isValid
     }
 
 }

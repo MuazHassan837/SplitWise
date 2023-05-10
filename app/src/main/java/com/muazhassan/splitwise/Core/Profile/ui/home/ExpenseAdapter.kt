@@ -7,11 +7,13 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.muazhassan.splitwise.Model.GroupExpense
 import com.muazhassan.splitwise.R
-
+import java.math.BigDecimal
+import java.time.LocalDate
 
 
 open class ExpenseAdapter : RecyclerView.Adapter<ExpenseAdapter.ViewHolder>() {
 
+    val expenses = mutableListOf<GroupExpense>()
 
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -28,19 +30,28 @@ open class ExpenseAdapter : RecyclerView.Adapter<ExpenseAdapter.ViewHolder>() {
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-
+        val expense = expenses?.get(position)
+        expense?.let {
+            holder.expenseId.text = it.groupName
+            holder.expenseAmount.text = it.amount.toString()
+            holder.expenseEmail.text = it.email
+            holder.expenseDescription.text = it.description
+        }
     }
 
     override fun getItemCount(): Int {
+        return expenses?.size ?: 0
     }
 
 
     fun setExpenses(expenses: List<GroupExpense>) {
-
+        this.expenses?.clear()
+        this.expenses?.addAll(expenses)
         notifyDataSetChanged()
     }
 
     fun removeItem(position: Int) {
+        expenses.removeAt(position)
         notifyItemRemoved(position)
     }
 }

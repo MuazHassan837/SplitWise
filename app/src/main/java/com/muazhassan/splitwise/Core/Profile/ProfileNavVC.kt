@@ -1,5 +1,6 @@
 package com.muazhassan.splitwise.Core.Profile
 
+import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.provider.MediaStore
@@ -13,7 +14,8 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.lifecycle.ViewModelProvider
-
+import com.google.android.gms.cast.framework.media.ImagePicker
+import com.google.firebase.auth.FirebaseAuth
 import com.muazhassan.splitwise.Core.CoreVC
 import com.muazhassan.splitwise.Core.Launch.MainFragment
 import com.muazhassan.splitwise.Core.Login.LoggedInViewModel
@@ -35,7 +37,7 @@ class ProfileNavVC : CoreVC() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        val email = ""
+        val email = FirebaseAuth.getInstance().currentUser?.email
 
 
         binding = ActivityProfileNavVcBinding.inflate(layoutInflater)
@@ -90,6 +92,7 @@ class ProfileNavVC : CoreVC() {
     }
 
     fun signOut() {
+        firebaseService.logOut()
         val intent = Intent(this, MainFragment::class.java)
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK)
         startActivity(intent)

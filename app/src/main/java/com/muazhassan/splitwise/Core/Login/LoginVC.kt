@@ -30,13 +30,16 @@ class LoginVC : CoreVC() {
                 storyboardBinding.loginFieldPassword)
             if (isValid) {
                 Timber.i("login done: email=$email, password=$password")
+                viewModel.login(email,password, this)
             }
         }
     }
 
     public override fun onStart() {
         super.onStart()
-
+        if (FirebaseAuth.getInstance().currentUser?.email != null) {
+            startActivity(Intent(this, ProfileNavVC::class.java))
+        }
     }
 
 }

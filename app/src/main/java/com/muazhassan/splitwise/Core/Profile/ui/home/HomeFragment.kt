@@ -4,16 +4,19 @@ import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
+import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import android.widget.PopupMenu
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.firebase.auth.FirebaseAuth
 import com.muazhassan.splitwise.Model.*
 import com.muazhassan.splitwise.R
 import com.muazhassan.splitwise.databinding.FragmentHomeBinding
@@ -51,11 +54,14 @@ class HomeFragment : Fragment() {
         recyclerView.adapter = adapter
         val root: View = binding.root
 
-        email = ""
+        email = FirebaseAuth.getInstance().currentUser?.email
 
         email?.let { nonNullEmail ->
             homeViewModel.setEmail(nonNullEmail)
+            homeViewModel.reloadContent(nonNullEmail)
             lifecycleScope.launch {
+                homeViewModel.saveUser(nonNullEmail)
+                homeViewModel.loadFromCloud(nonNullEmail)
             }
         }
 
@@ -99,8 +105,12 @@ class HomeFragment : Fragment() {
 
             override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
                 val position = viewHolder.adapterPosition
+                println("id is ${adapter.expenses[position].id}")
                 lifecycleScope.launch {
-
+                    homeViewModel.removeExpenseWithId(
+                        adapter.expenses[position].id,
+                        adapter.expenses[position].groupName
+                    )
                 }
                 adapter.removeItem(position)
             }
@@ -111,6 +121,7 @@ class HomeFragment : Fragment() {
     fun menuGroupAction(GroupName: String) {
         binding.groupTextview.text = "Selected group: $GroupName"
         lifecycleScope.launch {
+            homeViewModel.saveGroup(GroupName)
         }
         currGroup = Group(GroupName)
     }
@@ -118,6 +129,7 @@ class HomeFragment : Fragment() {
     fun menuMemberCheck(GroupName: String) {
         lifecycleScope.launch {
             Timber.i("here in menu $email!!")
+            homeViewModel.saveGroupRelation(GroupName, email!!)
         }
     }
 
@@ -161,7 +173,16 @@ class HomeFragment : Fragment() {
             val splitVal = data.getIntExtra("sliderValue", 0)
 
             if (amount != null && splitStrategy != null) {
-
+                lifecycleScope.launch {
+                    homeViewModel.saveLendExpenseWith(
+                        amount,
+                        email!!,
+                        splitStrategy,
+                        desp!!,
+                        currGroup!!.name,
+                        splitVal
+                    )
+                }
             }
         }
     }
