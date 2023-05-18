@@ -13,26 +13,26 @@ __Name:__ Syed Muaz Hassan
 + Sigout.
 
 ## Feature Design.
-<img width="369" alt="image" src="https://github.com/MuazHassan837/portfolio/assets/113602921/cebe4255-20bf-47a0-92ab-84c93cb2bb6c">
+<img width="369" alt="image" src="https://github.com/MuazHassan837/SplitWise/assets/113602921/b9613101-0f30-43fc-8841-d25ff62c304a">
 
 > Login
-<img width="373" alt="image" src="https://github.com/MuazHassan837/portfolio/assets/113602921/88565faa-daf9-4732-9c74-b449b33c2ec4">
+<img width="373" alt="image" src="https://github.com/MuazHassan837/SplitWise/assets/113602921/5729f55a-e050-49b4-b871-18c601bce85a">
 
 > Register
-<img width="373" alt="image" src="https://github.com/MuazHassan837/portfolio/assets/113602921/327137f4-509d-4049-8c1a-617601c76bf3">
+<img width="373" alt="image" src="https://github.com/MuazHassan837/SplitWise/assets/113602921/4ef8de5f-f4d8-4d5b-8487-4699c656c375">
 
 > Lend & Owned Amount
-<img width="374" alt="image" src="https://github.com/MuazHassan837/portfolio/assets/113602921/dc63fe3c-b7e9-43d4-90f4-6af6a7b05235">
-<img width="375" alt="image" src="https://github.com/MuazHassan837/portfolio/assets/113602921/0278f637-f569-4291-908a-396f0f9ecfa7">
+<img width="374" alt="image" src="https://github.com/MuazHassan837/SplitWise/assets/113602921/6c1bab74-6016-4b4e-9419-84700cf68089">
+<img width="375" alt="image" src="https://github.com/MuazHassan837/SplitWise/assets/113602921/0199806e-a3d2-4878-bf4d-c17e84d67d03">
 
 > Groups
-<img width="381" alt="image" src="https://github.com/MuazHassan837/portfolio/assets/113602921/5d8d7e37-3bfc-4b61-99e6-9a5d0b260ace">
+<img width="381" alt="image" src="https://github.com/MuazHassan837/SplitWise/assets/113602921/6fdc4b95-ed64-49d2-a7b2-bede1759f59c">
 
 > Add Expense
-<img width="379" alt="image" src="https://github.com/MuazHassan837/portfolio/assets/113602921/5df13a55-8bf9-42ee-8506-5425144095ac">
+<img width="379" alt="image" src="https://github.com/MuazHassan837/SplitWise/assets/113602921/34e6c6dd-ee56-4a8b-9162-22b3aa140157">
 
 > Sigout
-<img width="216" alt="image" src="https://github.com/MuazHassan837/portfolio/assets/113602921/28e183b0-53a1-41e4-80cd-ac5b98b08a97">
+<img width="216" alt="image" src="https://github.com/MuazHassan837/SplitWise/assets/113602921/aec200c8-b45a-40cd-89eb-01c58d921e38">
 
 
 
